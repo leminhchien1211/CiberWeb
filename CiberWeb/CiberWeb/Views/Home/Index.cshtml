@@ -1,0 +1,87 @@
+﻿@model CiberWeb.Models.OrderModel
+@using X.PagedList.Mvc.Core;
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<form asp-action="Index">
+    <div>
+        <p>Enter category to search</p>
+        <input asp-for="Product.Category.Name" class="form-control" />
+        <button type="submit" class="btn btn-primary" style="float:right; margin-top:20px; margin-bottom:20px"><i class="fa fa-floppy-o"></i> Search</button>
+    </div>
+</form>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>TT</th>
+            <th>Product Name</th>
+            <th>Category Name</th>
+            <th>Customer Name</th>
+            <th>Order Date</th>
+            <th>Amount</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            int count = 1 + (Model.PageList.PageNumber - 1) * Model.PageList.PageSize;
+            if (!Model.PageList.Any())
+            {
+                <tr>
+                    <td colspan="6" style="text-align:center">Không tìm thấy kết quả phù hợp</td>
+                </tr>
+            }
+            else
+            {
+                foreach (var item in Model.PageList)
+                {
+                    <tr>
+                        <td>@count</td>
+                        <td>@item.Product.Name</td>
+                        <td>@item.Product.Category.Name</td>
+                        <td>@item.Customer.Name</td>
+                        <td>@item.OrderDate.ToString("dd/MM/yyyy")</td>
+                        <td>@item.Amount</td>
+                    </tr>
+                    count++;
+                }
+            }
+        }
+    </tbody>
+</table>
+@{
+    if (Model != null && Model.PageList != null)
+    {
+        <div class="col-md-8 col-sm-12">
+            <div>
+                Trang @(Model.PageList.PageCount < Model.PageList.PageNumber ? 0 : Model.PageList.PageNumber) / @Model.PageList.PageCount
+                @Html.PagedListPager(Model.PageList, page => Url.Action("Index", new
+           {
+               page = page,
+           }))
+            </div>
+        </div>
+    }
+}
+
+<a asp-action="OpenModal" style="font-weight: bold; cursor: pointer; color: dodgerblue; float: right"
+   data-ajax="true" data-ajax-method="get" data-ajax-update="#modal-container" data-ajax-success="OpenModal">
+    Create New Order
+</a>
+
+<div id="modal-container">
+
+</div>
+
+<script>
+    function OpenModal() {
+        $("#pAddModal").modal("show");
+    }
+    function UpdateSuccess() {
+        $("#pAddModal").modal("hide");
+    }
+    function UpdateFail(xhr) {
+        $("#pAddModal").modal("hide");
+    }
+</script>

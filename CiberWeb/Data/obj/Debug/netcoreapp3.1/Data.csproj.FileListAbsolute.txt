@@ -1,0 +1,11 @@
+D:\Project\NoneVNPT\WebCiber\CiberWeb\Data\bin\Debug\netcoreapp3.1\Data.deps.json
+D:\Project\NoneVNPT\WebCiber\CiberWeb\Data\bin\Debug\netcoreapp3.1\Data.runtimeconfig.json
+D:\Project\NoneVNPT\WebCiber\CiberWeb\Data\bin\Debug\netcoreapp3.1\Data.runtimeconfig.dev.json
+D:\Project\NoneVNPT\WebCiber\CiberWeb\Data\bin\Debug\netcoreapp3.1\Data.dll
+D:\Project\NoneVNPT\WebCiber\CiberWeb\Data\bin\Debug\netcoreapp3.1\Data.pdb
+D:\Project\NoneVNPT\WebCiber\CiberWeb\Data\obj\Debug\netcoreapp3.1\Data.AssemblyInfoInputs.cache
+D:\Project\NoneVNPT\WebCiber\CiberWeb\Data\obj\Debug\netcoreapp3.1\Data.AssemblyInfo.cs
+D:\Project\NoneVNPT\WebCiber\CiberWeb\Data\obj\Debug\netcoreapp3.1\Data.csproj.CoreCompileInputs.cache
+D:\Project\NoneVNPT\WebCiber\CiberWeb\Data\obj\Debug\netcoreapp3.1\Data.dll
+D:\Project\NoneVNPT\WebCiber\CiberWeb\Data\obj\Debug\netcoreapp3.1\Data.pdb
+D:\Project\NoneVNPT\WebCiber\CiberWeb\Data\obj\Debug\netcoreapp3.1\Data.genruntimeconfig.cache

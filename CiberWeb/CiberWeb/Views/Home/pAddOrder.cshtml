@@ -1,0 +1,65 @@
+﻿@model CiberWeb.Models.OrderModel
+
+
+<div class="modal fade" id="pAddModal" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header" style="display:unset !important">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                @{
+                    <h4 class="modal-title" id="modalTitle">
+                        <i class="fa fa-edit"></i>
+                        Create new order
+                    </h4>
+                }
+            </div>
+            <form method="post" id="frmOrder" action="Home/Create" data-ajax="true" data-ajax-success="UpdateSuccess" data-ajax-failure="UpdateFail">
+                <div class="modal-body">
+                    <div class="row" style="text-align:center; margin-top: 20px">
+                        <div class="col-md-4 col-sm-6">
+                            <label asp-for="Name" class="control-label required"> Order Name </label>
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <input asp-for="Name" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="row" style="text-align: center; margin-top: 20px">
+                        <div class="col-md-4 col-sm-6">
+                            <label asp-for="Product" class="control-label required"> Product </label>
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <input asp-for="Product.Name" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="row" style="text-align: center; margin-top: 20px">
+                        <div class="col-md-4 col-sm-6">
+                            <label asp-for="Customer" class="control-label required"> Customer </label>
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <input asp-for="Customer.Name" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="row" style="text-align: center; margin-top: 20px">
+                        <div class="col-md-4 col-sm-6">
+                            <label asp-for="OrderDate" class="control-label required"> OrderDate </label>
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <input asp-for="OrderDate" type="datetime" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="row" style="text-align: center; margin-top: 20px">
+                        <div class="col-md-4 col-sm-6">
+                            <label asp-for="Amount" class="control-label required"> Amount </label>
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <input asp-for="Amount" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary"><i class="fa fa-floppy-o"></i> Create order</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
